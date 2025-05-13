@@ -10,7 +10,11 @@ public struct FlashCardBusinessModel: Identifiable, Codable {
     public let word: String
     public let meaning: String
     
-    public init(id: String, word: String, meaning: String) {
+    public init(
+        id: String,
+        word: String,
+        meaning: String
+    ) {
         self.id = id
         self.word = word
         self.meaning = meaning

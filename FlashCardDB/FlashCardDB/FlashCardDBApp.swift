@@ -5,6 +5,7 @@
 //  Created by Farbod Rahiminik on 5/13/25.
 //
 
+import AppDomain
 import SwiftUI
 import SwiftData
 
@@ -12,7 +13,7 @@ import SwiftData
 struct FlashCardDBApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            FlashCardSwiftDataModel.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

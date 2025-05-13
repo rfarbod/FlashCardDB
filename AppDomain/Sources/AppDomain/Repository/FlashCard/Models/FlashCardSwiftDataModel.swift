@@ -13,7 +13,11 @@ public final class FlashCardSwiftDataModel: Identifiable {
     public var word: String
     public var meaning: String
     
-    public init(id: String, word: String, meaning: String) {
+    public init(
+        id: String,
+        word: String,
+        meaning: String
+    ) {
         self.id = id
         self.word = word
         self.meaning = meaning

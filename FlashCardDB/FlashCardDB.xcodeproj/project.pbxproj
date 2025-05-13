@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2750139D2DD37C3300DB7A9C /* AppUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2750139C2DD37C3300DB7A9C /* AppUI */; };
+		275013A02DD37C4D00DB7A9C /* AppDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 2750139F2DD37C4D00DB7A9C /* AppDomain */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		271EB9F82DD35A4200A65375 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275013A02DD37C4D00DB7A9C /* AppDomain in Frameworks */,
+				2750139D2DD37C3300DB7A9C /* AppUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = FlashCardDB;
 			packageProductDependencies = (
+				2750139C2DD37C3300DB7A9C /* AppUI */,
+				2750139F2DD37C4D00DB7A9C /* AppDomain */,
 			);
 			productName = FlashCardDB;
 			productReference = 271EB9E82DD35A4000A65375 /* FlashCardDB.app */;
@@ -195,6 +204,10 @@
 			);
 			mainGroup = 271EB9DF2DD35A4000A65375;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2750139B2DD37C3300DB7A9C /* XCLocalSwiftPackageReference "../AppUI" */,
+				2750139E2DD37C4D00DB7A9C /* XCLocalSwiftPackageReference "../AppDomain" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 271EB9E92DD35A4000A65375 /* Products */;
 			projectDirPath = "";
@@ -550,6 +563,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2750139B2DD37C3300DB7A9C /* XCLocalSwiftPackageReference "../AppUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../AppUI;
+		};
+		2750139E2DD37C4D00DB7A9C /* XCLocalSwiftPackageReference "../AppDomain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../AppDomain;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2750139C2DD37C3300DB7A9C /* AppUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppUI;
+		};
+		2750139F2DD37C4D00DB7A9C /* AppDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 271EB9E02DD35A4000A65375 /* Project object */;
 }

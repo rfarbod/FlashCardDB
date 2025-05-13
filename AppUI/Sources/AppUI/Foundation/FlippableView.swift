@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FlippableView<Front: View, Back: View>: View {
+public struct FlippableView<Front: View, Back: View>: View {
     @State private var isFlipped = false
     
     let front: Front
@@ -15,7 +15,7 @@ struct FlippableView<Front: View, Back: View>: View {
     let animationDuration: Double
     let perspective: CGFloat
     
-    init(
+    public init(
         animationDuration: Double = 0.6,
         perspective: CGFloat = 0.8,
         @ViewBuilder front: () -> Front,
@@ -27,7 +27,7 @@ struct FlippableView<Front: View, Back: View>: View {
         self.perspective = perspective
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             front
                 .opacity(isFlipped ? 0 : 1)
