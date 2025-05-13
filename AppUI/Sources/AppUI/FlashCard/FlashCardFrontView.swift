@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-public struct FlashCardView: View {
+public struct FlashCardFrontView: View {
+    private enum Constants {
+        static let cornerRadius: CGFloat = 30
+    }
+    
     public var model: FlashCardModel
     
     public var body: some View {
-        ZStack {
-            
-        }
+        Text(model.word)
+            .font(.largeTitle)
+            .overlay {
+                RoundedRectangle(cornerRadius: Constants.cornerRadius)
+            }
     }
 }
