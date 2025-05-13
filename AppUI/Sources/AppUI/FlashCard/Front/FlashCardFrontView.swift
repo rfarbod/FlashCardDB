@@ -12,13 +12,20 @@ public struct FlashCardFrontView: View {
         static let cornerRadius: CGFloat = 30
     }
     
-    public var model: FlashCardModel
+    public var model: FlashCardFrontModel
+    
+    public init(
+        model: FlashCardFrontModel
+    ) {
+        self.model = model
+    }
     
     public var body: some View {
         Text(model.word)
             .font(.largeTitle)
             .overlay {
                 RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                    .foregroundStyle(Color(model.color))
             }
     }
 }
