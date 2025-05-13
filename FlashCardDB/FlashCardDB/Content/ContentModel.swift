@@ -5,8 +5,15 @@
 //  Created by Farbod Rahiminik on 5/13/25.
 //
 
+import AppUI
 import Foundation
 
 struct ContentModel {
-    var flashCards: [FlashCardV]
+    var flashCards: [FlashCardModel]
+    
+    init(
+        flashCards: [FlashCardModel] = []
+    ) {
+        self.flashCards = flashCards
+    }
 }
