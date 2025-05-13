@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "AppUI",
-    platforms: [.iOS(.v17)],
+    platforms: [.iOS(.v16), .macOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -17,9 +17,6 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "AppUI"),
-        .testTarget(
-            name: "AppUITests",
-            dependencies: ["AppUI"]
-        ),
+
     ]
 )
