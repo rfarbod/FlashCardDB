@@ -32,7 +32,7 @@ PocketWords/
 ## Gestures
 
 * **Horizontal Swipe**: Swipe left or right to flip the card front/back.
-* **Vertical Scroll**: Scroll up to advance to the next card; scroll down to return to the previous card.
+* **Vertical Scroll**: Scroll down to advance to the next card; scroll up to return to the previous card.
 
 ## Build & Test
 
@@ -44,3 +44,8 @@ PocketWords/
 
 * Initial JSON seeding avoids blocking UI but adds complexity on first launch.
 * All persistence resides in SwiftData for consistency, seeding JSON only once.
+
+##Video
+
+https://github.com/user-attachments/assets/88a27b23-ea04-404f-807d-b3ea96247bd0
+
