@@ -23,6 +23,9 @@ public struct FlashCardFrontView: View {
     public var body: some View {
         Text(model.word)
             .font(.largeTitle)
+            .accessibilityLabel(model.word)
+            .accessibilityAddTraits(.isHeader)
+            .accessibilityHint("Word on this flash card")
     }
 }
 
