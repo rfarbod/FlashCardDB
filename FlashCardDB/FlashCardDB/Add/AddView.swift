@@ -41,3 +41,12 @@ struct AddView: View {
         .padding()
     }
 }
+
+struct AddView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddView(onAdd: nil)
+            .previewDisplayName("Empty Fields")
+            .padding()
+            .previewLayout(.sizeThatFits)
+    }
+}

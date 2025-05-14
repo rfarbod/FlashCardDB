@@ -35,3 +35,38 @@ public struct FlashCardView: View {
         )
     }
 }
+
+struct FlashCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let front = FlashCardFrontModel(
+            id: "1",
+            word: "Hello",
+            color: .accentColor
+        )
+        
+        let back = FlashCardBackModel(
+            id: "1",
+            word: "Hello",
+            meaning: "سلام",
+            color: .purple,
+            placeholder: "Enter your answer",
+            state: .noAnswer,
+            onSubmit: { answer in
+                print("Submitted: \(answer)")
+            }
+        )
+        
+        let cardModel = FlashCardModel(
+            id: "1",
+            frontCard: front,
+            backCard: back,
+            onVerticalSwipe: nil,
+            onHorizontalSwipe: nil
+        )
+        
+        return FlashCardView(model: cardModel)
+            .frame(width: 300, height: 450)
+            .previewLayout(.sizeThatFits)
+            .padding()
+    }
+}

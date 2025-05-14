@@ -25,3 +25,29 @@ public struct FlashCardFrontView: View {
             .font(.largeTitle)
     }
 }
+
+struct FlashCardFrontView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            FlashCardFrontView(
+                model: FlashCardFrontModel(
+                    id: "1",
+                    word: "Apple",
+                    color: .accentColor
+                )
+            )
+            .previewDisplayName("Apple Card")
+
+            FlashCardFrontView(
+                model: FlashCardFrontModel(
+                    id: "2",
+                    word: "Library",
+                    color: .blue
+                )
+            )
+            .previewDisplayName("Library Card")
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
+    }
+}

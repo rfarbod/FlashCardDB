@@ -54,3 +54,50 @@ public struct FlashCardBackView: View {
         }
     }
 }
+
+struct FlashCardBackView_Previews: PreviewProvider {
+    static var previews: some View {
+        let baseModel = FlashCardBackModel(
+            id: "preview",
+            word: "Apple",
+            meaning: "سیب",
+            color: .accentColor,
+            placeholder: "Enter your answer",
+            state: .noAnswer,
+            onSubmit: { text in
+                print("Submitted answer: \(text)")
+            }
+        )
+
+        let correctModel = FlashCardBackModel(
+            id: "correct",
+            word: "Banana",
+            meaning: "موز",
+            color: .green,
+            placeholder: "",
+            state: .correct,
+            onSubmit: nil
+        )
+
+        let incorrectModel = FlashCardBackModel(
+            id: "incorrect",
+            word: "Orange",
+            meaning: "پرتقال",
+            color: .red,
+            placeholder: "",
+            state: .incorrent,
+            onSubmit: nil
+        )
+
+        return Group {
+            FlashCardBackView(model: baseModel)
+                .previewDisplayName("No Answer State")
+            FlashCardBackView(model: correctModel)
+                .previewDisplayName("Correct State")
+            FlashCardBackView(model: incorrectModel)
+                .previewDisplayName("Incorrect State")
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
+    }
+}
