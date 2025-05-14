@@ -32,7 +32,7 @@ public final class FlashCardDataSource: FlashCardRepository {
     }
     
     public func addFlashCard(flashCard: FlashCardBusinessModel) {
-        // logic to decided where to add the flash card but for now we just add it to swift data
+        // logic to decide where to add the flash card but for now we just add it to swift data
         swiftData.addFlashCard(flashCard: flashCard)
     }
     

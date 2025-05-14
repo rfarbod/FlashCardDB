@@ -11,7 +11,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
     @ObservedObject private var viewModel: ContentViewModel
     @State var isAdSheetPresented: Bool = false
     

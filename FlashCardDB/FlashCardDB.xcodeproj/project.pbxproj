@@ -45,11 +45,6 @@
 			path = FlashCardDBTests;
 			sourceTree = "<group>";
 		};
-		271EBA042DD35A4200A65375 /* FlashCardDBUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FlashCardDBUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +79,6 @@
 			children = (
 				271EB9EA2DD35A4000A65375 /* FlashCardDB */,
 				271EB9FA2DD35A4200A65375 /* FlashCardDBTests */,
-				271EBA042DD35A4200A65375 /* FlashCardDBUITests */,
 				271EB9E92DD35A4000A65375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,9 +155,6 @@
 			);
 			dependencies = (
 				271EBA032DD35A4200A65375 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				271EBA042DD35A4200A65375 /* FlashCardDBUITests */,
 			);
 			name = FlashCardDBUITests;
 			packageProductDependencies = (
