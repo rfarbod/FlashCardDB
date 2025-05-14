@@ -28,7 +28,10 @@ struct FlashCardDBApp: App {
         WindowGroup {
             ContentView(viewModel: .init(
                 model: .init(),
-                repository: FlashCardJSONRepository()
+                repository: FlashCardDataSource(
+                    swiftData: .init(context: sharedModelContainer.mainContext),
+                    jsonData: .init()
+                )
             ))
         }
         .modelContainer(sharedModelContainer)

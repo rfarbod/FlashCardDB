@@ -24,7 +24,7 @@ final class ContentViewModel: ObservableObject {
     
     func getItems() {
         do {
-            model.flashCards = try repository.getFlashCards().map({ flashCard in
+            model.flashCards = try repository.getFlashCards().enumerated().map({ index, flashCard in
                 return .init(
                     id: flashCard.id,
                     frontCard: .init(
@@ -40,7 +40,8 @@ final class ContentViewModel: ObservableObject {
                         state: .noAnswer,
                         onSubmit: { [weak self] answer in
                             guard let self else { return }
-                            self.submittedAnswer(answer: answer)
+                            let isCorrect = self.submittedAnswer(answer: answer, meaning: flashCard.meaning)
+                            self.model.flashCards[index].backCard.state = isCorrect ? .correct : .incorrent
                         }
                     ),
                     onVerticalSwipe: { [weak self] direction in
@@ -58,8 +59,8 @@ final class ContentViewModel: ObservableObject {
         }
     }
     
-    func submittedAnswer(answer: String) {
-        print(answer)
+    func submittedAnswer(answer: String, meaning: String) -> Bool {
+        answer.trimmingCharacters(in: .whitespaces).lowercased() == meaning.trimmingCharacters(in: .whitespaces).lowercased()
     }
     
     func onVerticalSwipe(direction: SwipeDirection) {
@@ -71,6 +72,5 @@ final class ContentViewModel: ObservableObject {
     }
     
     func onHorizontalSwipe() {
-        
     }
 }

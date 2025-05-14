@@ -46,7 +46,6 @@ public struct FlashCardBackView: View {
                         model.placeholder,
                         text: $typedText
                     )
-                    .padding()
                     .onSubmit {
                         model.onSubmit?(typedText)
                     }

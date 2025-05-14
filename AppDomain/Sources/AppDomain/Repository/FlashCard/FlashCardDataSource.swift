@@ -21,9 +21,18 @@ public final class FlashCardDataSource: FlashCardRepository {
         let swiftDataFlashCards = try swiftData.getFlashCards()
         
         if swiftDataFlashCards.isEmpty {
-            return try jsonData.getFlashCards()
+            try jsonData.getFlashCards().forEach { [weak self] businessModel in
+                self?.swiftData.addFlashCard(flashCard: businessModel)
+            }
+            
+            return try swiftData.getFlashCards()
         } else {
             return swiftDataFlashCards
         }
+    }
+    
+    public func addFlashCard(flashCard: FlashCardBusinessModel) {
+        // logic to decided where to add the flash card but for now we just add it to swift data
+        swiftData.addFlashCard(flashCard: flashCard)
     }
 }

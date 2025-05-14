@@ -5,7 +5,7 @@
 //  Created by Farbod Rahiminik on 5/13/25.
 //
 
-public struct FlashCardBusinessModel: Identifiable, Codable {
+public struct FlashCardBusinessModel: Sendable, Identifiable, Codable {
     public let id: String
     public let word: String
     public let meaning: String

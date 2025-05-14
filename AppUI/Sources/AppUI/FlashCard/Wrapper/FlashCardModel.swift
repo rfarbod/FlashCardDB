@@ -8,7 +8,7 @@
 public struct FlashCardModel: Identifiable {
     public let id: String
     public let frontCard: FlashCardFrontModel
-    public let backCard: FlashCardBackModel
+    public var backCard: FlashCardBackModel
     public let onVerticalSwipe: ((SwipeDirection) -> Void)?
     public let onHorizontalSwipe: ((SwipeDirection) -> Void)?
     

@@ -28,7 +28,7 @@ public struct FlashCardView: View {
                 FlashCardFrontView(model: model.frontCard)
             },
             back: {
-                FlashCardFrontView(model: model.frontCard)
+                FlashCardBackView(model: model.backCard)
             }
         )
     }

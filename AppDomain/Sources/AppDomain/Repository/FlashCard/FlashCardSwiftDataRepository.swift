@@ -32,4 +32,12 @@ public final class FlashCardSwiftDataRepository: FlashCardRepository {
             throw FlashCardError.invalidQueryResult
         }
     }
+    
+    public func addFlashCard(flashCard: FlashCardBusinessModel) {
+        context?.insert(FlashCardSwiftDataModel(
+            id: flashCard.id,
+            word: flashCard.word,
+            meaning: flashCard.meaning
+        ))
+    }
 }

@@ -7,4 +7,5 @@
 
 public protocol FlashCardRepository {
     func getFlashCards() throws -> [FlashCardBusinessModel]
+    func addFlashCard(flashCard : FlashCardBusinessModel)
 }

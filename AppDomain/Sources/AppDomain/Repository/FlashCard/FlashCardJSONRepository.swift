@@ -33,4 +33,9 @@ public final class FlashCardJSONRepository: FlashCardRepository {
             throw FlashCardError.decodingFailed
         }
     }
+    
+    public func addFlashCard(flashCard: FlashCardBusinessModel) {
+        //logic to add flash card to the json file
+        print(flashCard)
+    }
 }
