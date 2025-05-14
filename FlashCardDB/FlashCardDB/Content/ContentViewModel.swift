@@ -106,7 +106,7 @@ final class ContentViewModel: ObservableObject {
         getCorrectAnswersCount()
     }
     
-    private func checkIfCorrect(answer: String, meaning: String) -> Bool {
+    func checkIfCorrect(answer: String, meaning: String) -> Bool {
         answer.trimmingCharacters(in: .whitespaces).lowercased() == meaning.trimmingCharacters(in: .whitespaces).lowercased()
     }
     
