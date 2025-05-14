@@ -18,6 +18,8 @@ public struct FlashCardView: View {
     
     public var body: some View {
         FlippableView(
+            frontColor: model.frontCard.color,
+            backColor: model.backCard.color,
             onVerticalSwipe: { direction in
                 model.onVerticalSwipe?(direction)
             },

@@ -26,7 +26,7 @@ struct ContentView: View {
                         .offset(x: 0, y: CGFloat(idx - viewModel.model.topIndex) * 20)
                         .scaleEffect(1 - CGFloat(idx - viewModel.model.topIndex) * 0.03)
                         .zIndex(Double(viewModel.model.flashCards.count - idx))
-                        .animation(.easeInOut, value: viewModel.model.topIndex)
+                        .animation(.default, value: viewModel.model.topIndex)
                 }
             }
         }

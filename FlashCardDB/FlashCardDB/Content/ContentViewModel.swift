@@ -30,13 +30,13 @@ final class ContentViewModel: ObservableObject {
                     frontCard: .init(
                         id: flashCard.id,
                         word: flashCard.word,
-                        color: Color.purple
+                        color: Color.randomBright
                     ),
                     backCard: .init(
                         id: flashCard.id,
                         word: flashCard.word,
                         meaning: flashCard.meaning,
-                        color: Color.pink,
+                        color: Color.randomBright,
                         state: .noAnswer,
                         onSubmit: { [weak self] answer in
                             guard let self else { return }

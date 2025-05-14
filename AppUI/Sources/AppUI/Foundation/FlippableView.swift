@@ -19,6 +19,8 @@ public struct FlippableView<Front: View, Back: View>: View {
     
     let front: Front
     let back: Back
+    let frontColor: Color
+    let backColor: Color
     let animationDuration: Double
     let perspective: CGFloat
     let swipeThreshold: CGFloat
@@ -29,6 +31,8 @@ public struct FlippableView<Front: View, Back: View>: View {
         animationDuration: Double = 0.6,
         perspective: CGFloat = 0.8,
         swipeThreshold: CGFloat = 50,
+        frontColor: Color = .purple,
+        backColor: Color = .pink,
         onVerticalSwipe: ((SwipeDirection) -> Void)? = nil,
         onHorizontalSwipe: ((SwipeDirection) -> Void)? = nil,
         @ViewBuilder front: () -> Front,
@@ -38,6 +42,8 @@ public struct FlippableView<Front: View, Back: View>: View {
         self.back = back()
         self.animationDuration = animationDuration
         self.swipeThreshold = swipeThreshold
+        self.frontColor = frontColor
+        self.backColor = backColor
         self.perspective = perspective
         self.onVerticalSwipe = onVerticalSwipe
         self.onHorizontalSwipe = onHorizontalSwipe
@@ -48,7 +54,7 @@ public struct FlippableView<Front: View, Back: View>: View {
             front
                 .frame(width: 300, height: 500)
                 .padding()
-                .background(Color.pink)
+                .background(frontColor)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 2)
                 .rotation3DEffect(
@@ -61,7 +67,7 @@ public struct FlippableView<Front: View, Back: View>: View {
             back
                 .frame(width: 300, height: 500)
                 .padding()
-                .background(Color.purple)
+                .background(backColor)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 2)
                 .rotation3DEffect(
