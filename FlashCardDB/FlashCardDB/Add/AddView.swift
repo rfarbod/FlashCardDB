@@ -21,7 +21,7 @@ struct AddView: View {
             TextField("Add its meaning", text: $meaningText)
             
             Button {
-                guard !wordText.isEmpty, meaningText.isEmpty else {
+                guard !wordText.isEmpty, !meaningText.isEmpty else {
                     dismiss()
                     return
                 }

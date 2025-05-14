@@ -40,6 +40,8 @@ public final class FlashCardSwiftDataRepository: FlashCardRepository {
             word: flashCard.word,
             meaning: flashCard.meaning
         ))
+        
+        try? context?.save()
     }
     
     public func setAnswer(for flashCardId: String, isCorrect: Bool) {
