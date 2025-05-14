@@ -16,7 +16,7 @@ PocketWords is a single-screen iOS app that enables users to create and review v
 * MVVM pattern separates Views, ViewModels, and Repositories.
 * Two data sources:
 
-  * **Bundle JSON** (`Resources/initial_words.json`): seeds the database on first launch.
+  * **Bundle JSON** (`Resources/FlashCards.json`): seeds the database on first launch.
   * **SwiftData**: primary persistence layer for cards and XP.
 
 ## Project Structure
