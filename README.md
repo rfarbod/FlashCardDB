@@ -45,7 +45,7 @@ PocketWords/
 * Initial JSON seeding avoids blocking UI but adds complexity on first launch.
 * All persistence resides in SwiftData for consistency, seeding JSON only once.
 
-##Video
+## Video
 
 https://github.com/user-attachments/assets/88a27b23-ea04-404f-807d-b3ea96247bd0
 
