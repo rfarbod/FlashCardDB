@@ -5,6 +5,7 @@
 //  Created by Farbod Rahiminik on 5/13/25.
 //
 
+import AppUI
 import AppDomain
 import Combine
 import SwiftUI
@@ -41,7 +42,15 @@ final class ContentViewModel: ObservableObject {
                             guard let self else { return }
                             self.submittedAnswer(answer: answer)
                         }
-                    )
+                    ),
+                    onVerticalSwipe: { [weak self] direction in
+                        guard let self else { return }
+                        self.onVerticalSwipe(direction: direction)
+                    },
+                    onHorizontalSwipe: { [weak self] _ in
+                        guard let self else { return }
+                        self.onHorizontalSwipe()
+                    }
                 )
             })
         } catch {
@@ -51,5 +60,17 @@ final class ContentViewModel: ObservableObject {
     
     func submittedAnswer(answer: String) {
         print(answer)
+    }
+    
+    func onVerticalSwipe(direction: SwipeDirection) {
+        if direction == .up {
+            model.topIndex = min(model.topIndex + 1, model.flashCards.count - 1)
+        } else if direction == .down {
+            model.topIndex = max(model.topIndex - 1, 0)
+        }
+    }
+    
+    func onHorizontalSwipe() {
+        
     }
 }

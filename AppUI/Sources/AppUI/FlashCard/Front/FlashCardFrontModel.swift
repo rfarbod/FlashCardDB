@@ -13,7 +13,7 @@ public struct FlashCardFrontModel: Identifiable {
     public let word: String
     public let color: Color
     
-    init(
+    public init(
         id: String,
         word: String,
         color: Color

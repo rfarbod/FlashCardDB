@@ -23,9 +23,5 @@ public struct FlashCardFrontView: View {
     public var body: some View {
         Text(model.word)
             .font(.largeTitle)
-            .overlay {
-                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                    .foregroundStyle(Color(model.color))
-            }
     }
 }

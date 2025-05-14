@@ -17,20 +17,16 @@ public struct FlashCardBackView: View {
     public let model: FlashCardBackModel
     
     public var body: some View {
-        HStack {
+        VStack {
             Text(model.word)
                 .font(.largeTitle)
-                .overlay {
-                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                        .foregroundStyle(Color(model.color))
-                }
-            
             
             switch model.state {
             case .incorrent:
                 Image(systemName: "xmark")
                     .resizable()
                     .renderingMode(.template)
+                    .padding()
                     .foregroundStyle(Color(.red))
                     .frame(width: 75, height: 75)
                 
@@ -39,7 +35,7 @@ public struct FlashCardBackView: View {
             case .correct:
                 Image(systemName: "checkmark.seal")
                     .resizable()
-                    .renderingMode(.template)
+                    .padding()
                     .frame(width: 75, height: 75)
                 
                 Text("Correct!")
@@ -50,6 +46,7 @@ public struct FlashCardBackView: View {
                         model.placeholder,
                         text: $typedText
                     )
+                    .padding()
                     .onSubmit {
                         model.onSubmit?(typedText)
                     }

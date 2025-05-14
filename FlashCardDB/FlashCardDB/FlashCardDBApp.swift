@@ -26,7 +26,10 @@ struct FlashCardDBApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: .init(
+                model: .init(),
+                repository: FlashCardJSONRepository()
+            ))
         }
         .modelContainer(sharedModelContainer)
     }

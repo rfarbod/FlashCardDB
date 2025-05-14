@@ -17,11 +17,19 @@ public struct FlashCardView: View {
     }
     
     public var body: some View {
-        FlippableView {
-            FlashCardFrontView(model: model.frontCard)
-        } back: {
-            FlashCardBackView(model: model.backCard)
-        }
-
+        FlippableView(
+            onVerticalSwipe: { direction in
+                model.onVerticalSwipe?(direction)
+            },
+            onHorizontalSwipe: { direction in
+                model.onHorizontalSwipe?(direction)
+            },
+            front: {
+                FlashCardFrontView(model: model.frontCard)
+            },
+            back: {
+                FlashCardFrontView(model: model.frontCard)
+            }
+        )
     }
 }
