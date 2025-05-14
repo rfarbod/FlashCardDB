@@ -8,4 +8,5 @@
 public protocol FlashCardRepository {
     func getFlashCards() throws -> [FlashCardBusinessModel]
     func addFlashCard(flashCard : FlashCardBusinessModel)
+    func setAnswer(for flashCardId: String, isCorrect: Bool)
 }

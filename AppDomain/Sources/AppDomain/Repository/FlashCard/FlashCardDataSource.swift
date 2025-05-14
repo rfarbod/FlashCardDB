@@ -35,4 +35,8 @@ public final class FlashCardDataSource: FlashCardRepository {
         // logic to decided where to add the flash card but for now we just add it to swift data
         swiftData.addFlashCard(flashCard: flashCard)
     }
+    
+    public func setAnswer(for flashCardId: String, isCorrect: Bool) {
+        swiftData.setAnswer(for: flashCardId, isCorrect: isCorrect)
+    }
 }

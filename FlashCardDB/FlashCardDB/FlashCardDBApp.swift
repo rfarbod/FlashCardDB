@@ -31,7 +31,8 @@ struct FlashCardDBApp: App {
                 repository: FlashCardDataSource(
                     swiftData: .init(context: sharedModelContainer.mainContext),
                     jsonData: .init()
-                )
+                ),
+                xpRepository: XPUserDefaultsRepository(userDefaults: UserDefaults.standard)
             ))
         }
         .modelContainer(sharedModelContainer)

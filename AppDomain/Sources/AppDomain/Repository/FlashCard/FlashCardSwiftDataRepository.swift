@@ -25,7 +25,8 @@ public final class FlashCardSwiftDataRepository: FlashCardRepository {
                 return FlashCardBusinessModel.init(
                     id: model.id,
                     word: model.word,
-                    meaning: model.meaning
+                    meaning: model.meaning,
+                    isCorrect: model.isCorrect
                 )
             }
         } catch {
@@ -39,5 +40,15 @@ public final class FlashCardSwiftDataRepository: FlashCardRepository {
             word: flashCard.word,
             meaning: flashCard.meaning
         ))
+    }
+    
+    public func setAnswer(for flashCardId: String, isCorrect: Bool) {
+        do {
+            let results = try context?.fetch(descriptor).first(where: { $0.id == flashCardId })
+            results?.isCorrect = isCorrect
+            try context?.save()
+        } catch {
+            print("error")
+        }
     }
 }

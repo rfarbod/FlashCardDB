@@ -10,13 +10,19 @@ import Foundation
 
 struct ContentModel {
     var flashCards: [FlashCardModel]
+    var xp: Int
     var topIndex: Int
+    var correctAnswers: Int
     
     init(
         flashCards: [FlashCardModel] = [],
-        topIndex: Int = 0
+        xp: Int = 0,
+        topIndex: Int = 0,
+        correctAnswers: Int = 0
     ) {
         self.flashCards = flashCards
+        self.xp = xp
         self.topIndex = topIndex
+        self.correctAnswers = correctAnswers
     }
 }

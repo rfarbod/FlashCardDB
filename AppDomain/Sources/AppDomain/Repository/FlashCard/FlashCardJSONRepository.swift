@@ -38,4 +38,8 @@ public final class FlashCardJSONRepository: FlashCardRepository {
         //logic to add flash card to the json file
         print(flashCard)
     }
+    
+    public func setAnswer(for flashCardId: String, isCorrect: Bool) {
+       //logic to set answer in json
+    }
 }

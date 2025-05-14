@@ -9,14 +9,17 @@ public struct FlashCardBusinessModel: Sendable, Identifiable, Codable {
     public let id: String
     public let word: String
     public let meaning: String
+    public let isCorrect: Bool?
     
     public init(
         id: String,
         word: String,
-        meaning: String
+        meaning: String,
+        isCorrect: Bool?
     ) {
         self.id = id
         self.word = word
         self.meaning = meaning
+        self.isCorrect = isCorrect
     }
 }
