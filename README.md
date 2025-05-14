@@ -38,7 +38,6 @@ PocketWords/
 
 * Requires Xcode 16 targeting iOS 18.
 * Build with `⌘B`, run with `⌘R`.
-* Execute unit tests via `⌘U`.
 
 ## Trade-offs
 
